@@ -55,4 +55,4 @@ def generate_standings(teams, matches):
 
             standings[owner]["lost"] += 1
 
-    return sorted(standings.values(), key=lambda team: (team['points'], team['goal_difference'], team["name"]), reverse=True)
+    return sorted(standings.values(), key=lambda team: (team['points'], team["won"], team['goal_difference']), reverse=True)
