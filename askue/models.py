@@ -65,6 +65,9 @@ class Comment(models.Model):
     date_added = models.DateTimeField(default=timezone.now)
     users = models.ForeignKey(CustomUser, related_name="comments", on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.content
+
 
 class Post(models.Model):
     name = models.CharField(max_length=100)
