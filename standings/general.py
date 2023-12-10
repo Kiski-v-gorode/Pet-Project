@@ -15,8 +15,11 @@ def generate_standings(teams, matches):
 
     for match in matches:
 
+        # team_id хозяев и гостей
         owner = match["owner_id"]
         guest = match["guest_id"]
+
+        # Количество голов хозяев и гостей
         owner_goals = match["owner_goals"]
         guest_goals = match["guest_goals"]
 
