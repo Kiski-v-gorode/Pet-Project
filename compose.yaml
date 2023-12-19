@@ -1,0 +1,25 @@
+networks:
+  counter-net:
+
+volumes:
+  counter-vol:
+
+services:
+  web-fe:
+    build:
+      command: python app.py
+      ports:
+        - target: 8080
+          pubblished: 5001
+
+      networks:
+        - counter-net
+
+      volumes:
+        - type: volume
+          source: counter-vol
+          target: /app
+  reddis:
+    image: redis:alpine
+    networks: counter-net
+
